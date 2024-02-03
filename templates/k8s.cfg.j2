@@ -1,0 +1,10 @@
+# File managed by Ansible
+# All k8s nodes (controller and workers)
+command[check_service_kubelet]=/usr/{{ libdir }}/nagios/plugins/check_service.sh -s kubelet
+command[check_service_containerd]=/usr/{{ libdir }}/nagios/plugins/check_service.sh -s containerd
+command[check_proc_kube-proxy-rootuser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-proxy -u root -c 1
+# Only controller node
+command[check_proc_kube-controller-rootuser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-controller -u root -c 1
+command[check_proc_kube-controller-lxduser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-controller -u lxd -c 1
+command[check_proc_kube-apiserver-rootuser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-apiserver -u root -c 1
+command[check_proc_kube-scheduler-rootuser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-scheduler -u root -c 1

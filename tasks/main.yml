@@ -1,0 +1,15 @@
+---
+# tasks file for ansible-role_nrpe_k8s
+
+- name: Ensure k8s.cfg is installed
+  ansible.builtin.template:
+    src: "{{ item }}.j2"
+    dest: "{{ include_dir }}/{{ item }}"
+    owner: root
+    group: root
+    mode: '0644'
+  loop:
+    - k8s.cfg
+  notify: Handler nrpe reload
+
+...

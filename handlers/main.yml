@@ -1,0 +1,6 @@
+---
+# handlers file for ansible-role_nrpe_k8s
+- name: Handler nrpe reload
+  ansible.builtin.service:
+    name: nrpe
+    state: reloaded

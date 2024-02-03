@@ -1,0 +1,5 @@
+---
+# vars file for ansible-role_nrpe_k8s
+
+libdir: "{{ 'lib64' if ansible_os_family == 'RedHat' else 'lib' }}"
+include_dir: "{{ '/etc/nrpe.d' if ansible_os_family == 'RedHat' else '/etc/nagios/nrpe.d' }}"

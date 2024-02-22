@@ -10,6 +10,6 @@
     mode: '0644'
   loop:
     - k8s.cfg
-  notify: Handler nrpe reload
+  notify: Handler NRPE reload
 
 ...

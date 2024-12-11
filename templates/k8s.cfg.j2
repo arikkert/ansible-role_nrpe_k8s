@@ -5,6 +5,6 @@ command[check_service_containerd]=/usr/{{ libdir }}/nagios/plugins/check_service
 command[check_proc_kube-proxy-rootuser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-proxy -u root -c 1
 # Only controller node
 command[check_proc_kube-controller-rootuser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-controller -u root -c 1
-command[check_proc_kube-controller-lxduser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-controller -u lxd -c 1
+command[check_proc_kube-controllers]=/usr/{{ libdir }}/nagios/plugins/check_procs --ereg-argument-array=kube-controllers -c 1:1
 command[check_proc_kube-apiserver-rootuser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-apiserver -u root -c 1
 command[check_proc_kube-scheduler-rootuser]=/usr/{{ libdir }}/nagios/plugins/check_procs -C kube-scheduler -u root -c 1

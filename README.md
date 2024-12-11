@@ -11,7 +11,7 @@ NRPE is already installed
 Role Variables
 --------------
 
-- *libdir*: sub directory of /usr where lib files are installedh
+- *libdir*: sub directory of /usr where lib files are installed
 - *include_dir*: Fully qualified path of nrpe.d directory
 
 Dependencies
